@@ -18,14 +18,8 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        "http://localhost:3001",
-        "http://localhost:3002",  # Docusaurus dev server
-        "https://physical-ai-humanoid-robotics-heojh87p2-arfa-siddiquis-projects.vercel.app",
-        "https://*.vercel.app",
-    ],
-    allow_credentials=True,
+    allow_origins=["*"],  # Allow all origins - configure for production as needed
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
